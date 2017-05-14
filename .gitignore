@@ -1,0 +1,4 @@
+.vagrant/
+.HA_VERSION
+.uuid
+secrets.yaml
