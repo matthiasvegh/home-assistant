@@ -1,0 +1,3 @@
+[submodule "ediplug-py"]
+	path = ediplug-py
+	url = git@github.com:wendlers/ediplug-py.git
