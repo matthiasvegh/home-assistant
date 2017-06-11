@@ -44,6 +44,10 @@ sun:
 influxdb:
   host: !secret influxdb_host
 
+light:
+  platform: hue
+  host: Philips-Hue
+
 sensor:
   - platform: yr
 
