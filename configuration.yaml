@@ -41,6 +41,9 @@ logbook:
 # Track the sun
 sun:
 
+influxdb:
+  host: !secret influxdb_host
+
 sensor:
   - platform: yr
 
