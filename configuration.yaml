@@ -69,6 +69,12 @@ sensor:
     entity_id: sensor.server_rack
     name: "Server Rack"
 
+  - platform: mqtt
+    state_topic: "owntracks/phil/Samsung Galaxy s7"
+    name: "Galaxy S7 Battery level"
+    unit_of_measurement: "%"
+    value_template: "{{ value_json.batt }}"
+
 
 # Text to speech
 tts:
