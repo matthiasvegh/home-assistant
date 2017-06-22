@@ -75,6 +75,13 @@ sensor:
     unit_of_measurement: "%"
     value_template: "{{ value_json.batt }}"
 
+  - platform: rest
+    scan_interval: 900
+    name: "Outdoors temperature"
+    unit_of_measurement: "°C"
+    resource: "https://www.metaweather.com/api/location/804365/"
+    value_template: "{{ value_json.consolidated_weather[0].the_temp }}"
+
 
 # Text to speech
 tts:
