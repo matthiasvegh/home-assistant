@@ -140,3 +140,14 @@ automation:
     action:
       service: homeassistant.turn_on
       entity_id: group.all_lights
+
+  - alias: "Turn on air conditioning when leaving"
+    trigger:
+      platform: state
+      entity_id: device_tracker.phil_samsung_galaxy_s7
+      state: 'not_home'
+    action:
+      - service: homeassistant.turn_off
+        entity_id: switch.air_conditioning__living_room
+      - service: homeassistant.turn_off
+        entity_id: switch.air_conditioning__bedroom
