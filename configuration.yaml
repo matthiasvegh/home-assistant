@@ -79,6 +79,18 @@ sensor:
     unit_of_measurement: "%"
     value_template: "{{ value_json.batt }}"
 
+switch:
+  - platform: broadlink
+    host: !secret broadlink_living_room_host
+    mac: !secret broadlink_living_room_mac
+    type: rm_mini
+    friendly_name: "Living room"
+    switches:
+      air_conditioning:
+        friendly_name: "Air Conditioning"
+        command_on: "JgB4AGQAASoQMhAQDxEQEBAQDxEOERAQEBEPMxARDxEPNBExEBEPNQ8REDIPMw80EjEQMxEyDzURMRARDxEQEQ80ETEPNQ8SDzMQEA8REBEPNA8zEDIREBAzDxEQEBARDzIQERAREBEPEQ8QEBAQERAyDzMRMxEyDwANBQ=="
+        command_off: "JgB4AGIAAS0QMg4TEBEMFBAQDxENFBARDxMNNRAREBEQMw8SDjUMNw8SDTYONQ42DTYONQ02DjYNNg0TEBENEw81DTUONg0UDjUOEg4TDRMQNA02DjYNEw80DRQPERARDTYNEw4TDhQOEhARDRQPEQ0TDRQPMxA1DQANBQ=="
+
 
 # Text to speech
 tts:
