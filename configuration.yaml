@@ -87,9 +87,20 @@ switch:
     friendly_name: "Living room"
     switches:
       air_conditioning:
-        friendly_name: "Air Conditioning"
+        friendly_name: "Air Conditioning @ Living Room"
         command_on: "JgB4AGQAASoQMhAQDxEQEBAQDxEOERAQEBEPMxARDxEPNBExEBEPNQ8REDIPMw80EjEQMxEyDzURMRARDxEQEQ80ETEPNQ8SDzMQEA8REBEPNA8zEDIREBAzDxEQEBARDzIQERAREBEPEQ8QEBAQERAyDzMRMxEyDwANBQ=="
         command_off: "JgB4AGIAAS0QMg4TEBEMFBAQDxENFBARDxMNNRAREBEQMw8SDjUMNw8SDTYONQ42DTYONQ02DjYNNg0TEBENEw81DTUONg0UDjUOEg4TDRMQNA02DjYNEw80DRQPERARDTYNEw4TDhQOEhARDRQPEQ0TDRQPMxA1DQANBQ=="
+
+  - platform: broadlink
+    host: !secret broadlink_bedroom_host
+    mac: !secret broadlink_bedroom_mac
+    type: rm_mini
+    friendly_name: "Bedroom"
+    switches:
+      air_conditioning:
+        friendly_name: "Air Conditioning @ Bedroom"
+        command_on: "JgB4AGUAASgPMxEPEQ8PEQ8REA8REA8REBERMhEPERAPMxAyETEQNBEQEDIRMhEyDxERMREQETMPMxAQEQ8SDxEQEDERMhERDzMREA8RERARMhAQEDIREBAzEQ8REBAQDzMRDxAQERARDxEPEQ8RDxEyEDERMhEyEAANBQ=="
+        command_off: "JgB4AGUAASkQMhEPERAQDxAQEA8RDxAQERAPNA8REQ8RMg8REQ8RERAxETIPMxAyEQ8RMREQETMRMhEPEQ8RDxEQDzMQMhEQETEREBAQEBAPNBAQDzMQEBEyEQ8REBAPETIRDxEPERARDxEQEBAPEBEPERAQMg8zEQANBQ=="
 
 
 # Text to speech
