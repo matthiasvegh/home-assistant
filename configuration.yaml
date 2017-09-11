@@ -98,6 +98,12 @@ switch:
         command_off: "JgB4AGUAASkQMhEPERAQDxAQEA8RDxAQERAPNA8REQ8RMg8REQ8RERAxETIPMxAyEQ8RMREQETMRMhEPEQ8RDxEQDzMQMhEQETEREBAQEBAPNBAQDzMQEBEyEQ8REBAPETIRDxEPERARDxEQEBAPEBEPERAQMg8zEQANBQ=="
 
 
+binary_sensor:
+  - platform: ping
+    host: !secret proxmox_address
+    name: proxmox
+
+
 # Text to speech
 tts:
   platform: google
