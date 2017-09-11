@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
-    apt-get install -y python3-pip
+    apt-get install -y python3-pip autossh
     pip3 install homeassistant
     mkdir -p /root/.homeassistant/
     ln -s /vagrant/configuration.yaml /root/.homeassistant/configuration.yaml
