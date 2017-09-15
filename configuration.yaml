@@ -11,6 +11,18 @@ homeassistant:
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: Europe/Budapest
 
+
+  customize:
+    sensor.router_eth0_rx:
+      hidden: true
+    sensor.router_eth1_rx:
+      hidden: true
+    sensor.router_eth0_tx:
+      hidden: true
+    sensor.router_eth1_tx:
+      hidden: true
+
+
 # Enables the frontend
 frontend:
 
