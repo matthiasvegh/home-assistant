@@ -86,6 +86,11 @@ sensor:
     unit_of_measurement: "%"
     value_template: "{{ value_json.batt }}"
 
+  - platform: mqtt
+    state_topic: "tasker/phil/Sleep"
+    name: "phil's sleep state"
+    qos: 2
+
   - platform: snmp
     host: !secret router_host
     name: "router eth0 RX"
@@ -142,6 +147,7 @@ binary_sensor:
   - platform: ping
     host: !secret proxmox_address
     name: proxmox
+
 
 
 # Text to speech
