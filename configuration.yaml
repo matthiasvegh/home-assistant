@@ -21,6 +21,10 @@ homeassistant:
       hidden: true
     sensor.router_eth1_tx:
       hidden: true
+    sensor.nas_lagg0_rx:
+      hidden: true
+    sensor.nas_lagg0_tx:
+      hidden: true
 
 
 # Enables the frontend
@@ -118,6 +122,21 @@ sensor:
     baseoid: "1.3.6.1.2.1.2.2.1.16.3"
     version: "2c"
     community: !secret router_snmp_community
+
+  - platform: snmp
+    host: !secret nas_host
+    name: "nas lagg0 RX"
+    baseoid: "1.3.6.1.2.1.2.2.1.10.4"
+    version: "2c"
+    community: !secret nas_snmp_community
+
+  - platform: snmp
+    host: !secret nas_host
+    name: "nas lagg0 TX"
+    baseoid: "1.3.6.1.2.1.2.2.1.16.4"
+    version: "2c"
+    community: !secret nas_snmp_community
+
 
 switch:
   - platform: broadlink
