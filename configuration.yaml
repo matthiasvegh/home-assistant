@@ -221,3 +221,26 @@ automation:
         entity_id: switch.air_conditioning__living_room
       - service: homeassistant.turn_off
         entity_id: switch.air_conditioning__bedroom
+
+  - alias: "Daily vacuum cleaning"
+    trigger:
+      platform: time
+      at: "13:30:00"
+    condition:
+      condition: and
+      conditions:
+        - condition: state
+          entity_id: device_tracker.phil_samsung_galaxy_s7
+          state: 'not_home'
+    action:
+      service: homeassistant.turn_on
+      entity_id: switch.roomba
+
+  - alias: "Turn vacuum cleaner off when arriving"
+    trigger:
+      platform: state
+      entity_id: device_tracker.phil_samsung_galaxy_s7
+      to: 'not_home'
+    action:
+      service: homeassistant.turn_off
+      entity_id: switch.roomba
