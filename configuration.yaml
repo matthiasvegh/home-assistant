@@ -244,7 +244,7 @@ automation:
     trigger:
       platform: state
       entity_id: device_tracker.phil_samsung_galaxy_s7
-      to: 'not_home'
+      to: 'home'
     action:
       service: homeassistant.turn_off
       entity_id: switch.roomba
