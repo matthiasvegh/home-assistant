@@ -98,42 +98,42 @@ sensor:
   - platform: snmp
     host: !secret router_host
     name: "router eth0 RX"
-    baseoid: "1.3.6.1.2.1.2.2.1.10.2"
+    baseoid: "1.3.6.1.2.1.31.1.1.1.6.2"
     version: "2c"
     community: !secret router_snmp_community
 
   - platform: snmp
     host: !secret router_host
     name: "router eth1 RX"
-    baseoid: "1.3.6.1.2.1.2.2.1.10.3"
+    baseoid: "1.3.6.1.2.1.31.1.1.1.6.3"
     version: "2c"
     community: !secret router_snmp_community
 
   - platform: snmp
     host: !secret router_host
     name: "router eth0 TX"
-    baseoid: "1.3.6.1.2.1.2.2.1.16.2"
+    baseoid: "1.3.6.1.2.1.31.1.1.1.10.2"
     version: "2c"
     community: !secret router_snmp_community
 
   - platform: snmp
     host: !secret router_host
     name: "router eth1 TX"
-    baseoid: "1.3.6.1.2.1.2.2.1.16.3"
+    baseoid: "1.3.6.1.2.1.31.1.1.1.10.3"
     version: "2c"
     community: !secret router_snmp_community
 
   - platform: snmp
     host: !secret nas_host
     name: "nas lagg0 RX"
-    baseoid: "1.3.6.1.2.1.2.2.1.10.4"
+    baseoid: "1.3.6.1.2.1.31.1.1.1.6.4"
     version: "2c"
     community: !secret nas_snmp_community
 
   - platform: snmp
     host: !secret nas_host
     name: "nas lagg0 TX"
-    baseoid: "1.3.6.1.2.1.2.2.1.16.4"
+    baseoid: "1.3.6.1.2.1.31.1.1.1.10.4"
     version: "2c"
     community: !secret nas_snmp_community
 
