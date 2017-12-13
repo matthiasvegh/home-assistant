@@ -72,6 +72,12 @@ sensor:
       - humidity
 
   - platform: command_line
+    name: "Bedroom ambient temperature"
+    command: !secret bedroom_ambient_temperature_command
+    unit_of_measurement: '°C'
+    scan_interval: 30
+
+  - platform: command_line
     name: "Air Conditioning"
     command: "python3 /vagrant/ediplug-py/src/ediplug/smartplug.py -H 192.168.1.83 -l admin -p 12345678 -w | cut -d ' ' -f 1"
     unit_of_measurement: 'W'
