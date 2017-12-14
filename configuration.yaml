@@ -25,6 +25,8 @@ homeassistant:
       hidden: true
     sensor.nas_lagg0_tx:
       hidden: true
+    sensor.bedroom_sensors:
+      hidden: true
 
 
 # Enables the frontend
@@ -72,16 +74,39 @@ sensor:
       - humidity
 
   - platform: command_line
-    name: "Bedroom ambient temperature"
-    command: !secret bedroom_ambient_temperature_command
-    unit_of_measurement: '°C'
+    name: "Bedroom sensors"
+    command: !secret bedroom_sensors_command
     scan_interval: 30
 
-  - platform: command_line
-    name: "Bedroom window temperature"
-    command: !secret bedroom_window_temperature_command
-    unit_of_measurement: '°C'
-    scan_interval: 30
+  - platform: template
+    sensors:
+      bedroom_ambient_temperature:
+        friendly_name: "Bedroom ambient temperature"
+        unit_of_measurement: "°C"
+        value_template: >-
+          {% set ambient = states.sensor.bedroom_sensors.state.splitlines() %}
+          {{ ambient[0].split()[0] }}
+
+      bedroom_ambient_humidity:
+        friendly_name: "Bedroom ambient temperature"
+        unit_of_measurement: "%"
+        value_template: >-
+          {% set ambient = states.sensor.bedroom_sensors.state.splitlines() %}
+          {{ ambient[0].split()[1] }}
+
+      bedroom_window_temperature:
+        friendly_name: "Bedroom window temperature"
+        unit_of_measurement: "°C"
+        value_template: >-
+          {% set ambient = states.sensor.bedroom_sensors.state.splitlines() %}
+          {{ ambient[1].split()[0] }}
+
+      bedroom_window_humidity:
+        friendly_name: "Bedroom window humidity"
+        unit_of_measurement: "%"
+        value_template: >-
+          {% set ambient = states.sensor.bedroom_sensors.state.splitlines() %}
+          {{ ambient[1].split()[1] }}
 
   - platform: command_line
     name: "Air Conditioning"
