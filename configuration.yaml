@@ -88,7 +88,7 @@ sensor:
           {{ ambient[0].split()[0] }}
 
       bedroom_ambient_humidity:
-        friendly_name: "Bedroom ambient temperature"
+        friendly_name: "Bedroom ambient humidity"
         unit_of_measurement: "%"
         value_template: >-
           {% set ambient = states.sensor.bedroom_sensors.state.splitlines() %}
