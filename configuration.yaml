@@ -210,6 +210,20 @@ sensor:
     version: "1"
     community: !secret accesspoint_snmp_community
 
+  - platform: snmp
+    host: !secret accesspoint_host
+    name: "Home WiFi Clients 2.4GHz"
+    baseoid: "1.3.6.1.4.1.41112.1.6.1.2.1.8.1"
+    version: "1"
+    community: !secret accesspoint_snmp_community
+
+  - platform: snmp
+    host: !secret accesspoint_host
+    name: "Home WiFi Clients 5GHz"
+    baseoid: "1.3.6.1.4.1.41112.1.6.1.2.1.8.4"
+    version: "1"
+    community: !secret accesspoint_snmp_community
+
 switch:
   - platform: broadlink
     host: !secret broadlink_living_room_host
