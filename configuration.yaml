@@ -224,6 +224,11 @@ sensor:
     version: "1"
     community: !secret accesspoint_snmp_community
 
+  - platform: steam_online
+    api_key: !secret steam_api_key
+    accounts:
+      - !secret steam_account_1
+
 switch:
   - platform: broadlink
     host: !secret broadlink_living_room_host
