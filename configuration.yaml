@@ -274,6 +274,12 @@ tts:
 
 group: !include groups.yaml
 
+hue:
+  bridges:
+    - host: Philips-hue
+      allow_hue_groups: true
+      allow_unreachable: true
+
 mqtt:
   broker: !secret mqtt_host
   port: !secret mqtt_port
